@@ -1,0 +1,35 @@
+<hr class="topbar">
+<a href="poster.jpg"> <img src="poster.jpg" width="100%">   </a>
+<div class="row main">
+  <div class="large-8 columns">
+  <ul >
+    <li>
+       參加者必須為中學生， 年齡不限
+    </li>
+    <li>
+       當登記完成後，系統將提供一個獨立連結，你可以使用該連結作分享
+    </li>
+    <li>
+       請提供正確資料，否則中獎視為作廢論
+    </li>
+    <li>
+      每人只能登記一次，重複登記無效
+    </li>
+    <li>
+       保留一切最終決定權
+    </li>
+    <li>
+       參加本次活動即同意我們的使用條款
+    </li>
+  </ul>
+  </div>
+  <div class="large-4 columns"><%= form_tag "/web/finish" do %>
+        姓名(需與身分證相同): <%= text_field_tag :name %>
+        班級：<%= select_tag "form", options_for_select([ "中一", "中二","中三","中四","中五","中六" ],"中六")%>
+        電話(務必正確，用於確認領獎之用)：  <%= text_field_tag :tel %>
+        電郵(選項)：  <%= text_field_tag :email %>
+         <%= hidden_field_tag 'refid', @refid%>
+        <%= submit_tag "我要抽獎",class:"button success" %>
+        <% end %></div>
+</div>
+
